@@ -12,9 +12,9 @@ LR = 1e-3
 
 env = gym.make('CartPole-v0')
 env.reset()
-goal_steps = 500
-score_requirement = 50
-initial_games = 10000
+goal_steps = 900
+score_requirement = 100
+initial_games = 25000
 
 def some_random_games():
 	for episode in range(5) :
@@ -86,8 +86,8 @@ model.add(Dense(2, activation = 'softmax'))
 model.summary()
 model.compile(loss = 'categorical_crossentropy' , optimizer = 'adam' , metrics = ['accuracy'])
 hist = model.fit(X , Y ,
-			batch_size = 50 ,
-			nb_epoch = 5 ,
+			batch_size = 100 ,
+			nb_epoch = 8 ,
 			)
 
 model.save('model.h5')
